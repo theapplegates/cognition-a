@@ -1,0 +1,19 @@
+{
+	"name": "Cognition",
+	"version": "1.0.1",
+	"private": true,
+	"scripts": {
+		"scss": "sass src/styles:public/css --no-source-map --style compressed --experimental-integrations",
+		"dev": "astro dev --experimental-integrations",
+		"build": "yarn scss & astro build --experimental-integrations",
+		"preview": "astro preview --experimental-integrations"
+	},
+	"devDependencies": {
+		"@astrojs/rss": "^0.2.0",
+		"astro": "^1.0.0-beta.50",
+		"sass": "^1.52.3"
+	},
+	"dependencies": {
+		"astro-imagetools": "^0.6.10"
+	}
+}

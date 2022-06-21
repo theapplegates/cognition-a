@@ -1,0 +1,48 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+	position: relative;
+	-webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+	background-color: var(--color-body-background);
+	color: var(--color-primary-text);
+    display: flex;
+    flex-direction: column;
+	font-family: "ManropeGX", sans-serif;
+	line-height: 1.6;
+	margin: 0;
+    min-height: var(--app-height, 100%);
+	position: relative;
+}
+
+main {
+    flex: 1 0 auto;
+	padding: 40px var(--global-side-space);
+}
+
+picture,
+img {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 1.5em 0;
+}

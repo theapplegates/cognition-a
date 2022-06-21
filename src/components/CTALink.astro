@@ -1,0 +1,24 @@
+---
+const { link, linkText } = Astro.props
+---
+
+<p class="cta-link">
+    <a href={link}>{linkText}</a>
+</p>
+
+<style is:global lang="scss">
+.cta-link {
+    --max-font-size: 1;
+    margin: 3em 0 2em;
+
+    .grid + & {
+        margin-block-start: 4em;
+    }
+
+    a {
+        display: flex;
+        margin: 0 auto;
+        width: fit-content;
+    } 
+}  
+</style>

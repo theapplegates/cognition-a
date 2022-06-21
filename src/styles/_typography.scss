@@ -1,0 +1,190 @@
+@font-face {
+	font-display: swap;
+	font-family: "ManropeGX";
+	font-style: normal;
+	font-weight: 200 800;
+	src: url("/fonts/Manrope[wght].woff2") format("woff2-variations");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6, p, ol, ul, address, blockquote, code {
+	--safari-fix: 0vw; /* allows Safari to scale on resize */
+	font-size: clamp(
+		calc(var(--min-font-size) * 1rem),
+		calc(
+			(var(--min-font-size) * 1rem) +
+				(var(--max-font-size) - var(--min-font-size)) *
+				(
+					(100vw - (var(--min-viewport) * 1rem)) /
+						(var(--max-viewport) - var(--min-viewport))
+				)
+		),
+		calc(var(--max-font-size) * 1rem)
+	);
+	font-weight: normal;
+	min-height: var(--safari-fix);
+}
+
+
+h1,
+.text-1 {
+    --min-font-size: 2.375;
+	--max-font-size: 2.8725;
+
+	color: var(--color-primary-headers);
+	font-variation-settings: "wght" 800;
+	margin: 0 0 0.2em;
+}
+h2,
+.text-2 {
+	--min-font-size: 2;
+	--max-font-size: 2.375;
+
+	color: var(--color-primary-headers);
+    font-variation-settings: "wght" 650;
+	margin: 0 0 0.3em;
+}
+h3,
+.text-3 {
+	--min-font-size: 1.625;
+	--max-font-size: 2;
+
+	color: var(--color-primary-headers);
+    font-variation-settings: "wght" 650;
+	margin: 0 0 0.4em;
+}
+h4,
+.text-4 {
+	--min-font-size: 1.375;
+	--max-font-size: 1.625;
+
+	color: var(--color-primary-headers);
+    font-variation-settings: "wght" 650;
+	margin: 0 0 0.5em;
+}
+h5,
+.text-5 {
+	--min-font-size: 1.25;
+	--max-font-size: 1.375;
+
+	color: var(--color-primary-headers);
+    font-variation-settings: "wght" 650;
+	margin: 0 0 0.5em;
+}
+h6,
+.text-6 {
+	--min-font-size: 1;
+	--max-font-size: 1.25;
+
+	color: var(--color-primary-headers);
+    font-variation-settings: "wght" 650;
+	margin: 0 0 0.5em;
+}
+
+ol,
+ul {
+    --min-font-size: 1;
+	--max-font-size: 1.25;
+
+	margin: 0 0 1.5em;
+    padding-inline-start: 0;
+
+    li {
+        margin-inline-start: 1.75em;
+        padding-inline-start: 0.25em;
+    }
+}
+ul {
+    list-style: none;
+}
+ol {
+    li::marker {
+        font-size: 0.75em;
+    }
+}
+ul:not([class]) {
+    list-style: initial;
+
+    li::marker {
+        color: rgba(49, 49, 49, 0.5);
+        list-style-type: '•';
+    }
+}
+
+p {
+	--min-font-size: 1;
+	--max-font-size: 1.25;
+
+	margin: 0 0 1.5em;
+}
+
+b,
+strong {
+	font-variation-settings: "wght" 650;
+}
+
+blockquote {
+    padding: 1em 0 2.5em;
+
+    p {
+        --min-font-size: 1.25;
+	    --max-font-size: 1.75;
+        margin-block-end: 0;
+    }
+
+    p::before,
+    p::after {    
+        font-size: 3em;
+        line-height: 0;
+        vertical-align: -0.35em;
+    }
+    p::before {
+        content: '“';
+        margin-inline-start: -0.4em;
+    }
+    p::after {
+        content: '”';
+    }
+}
+
+@media screen and (max-width: 767px) {
+    blockquote {
+        margin: 1em;
+    }
+}
+
+[id] {
+    scroll-margin-top: var(--global-header-height);
+}
+
+code:not(pre code) {
+    font-weight: bold;
+}
+
+pre {
+    border-radius: calc(var(--global-border-radius) / 2);
+    margin: var(--global-vertical-space) 0;
+    padding: 20px;
+
+    code {
+        --min-font-size: 1;
+        --max-font-size: 1;
+    }
+}
+
+.warning {
+	background-color: var(--color-warning);
+	color: #fff;
+	font-variation-settings: "wght" 650;
+    margin: 0 auto;
+	padding: 10px;
+	text-align: center;
+    width: min(var(--max-width-content), 100%);
+}
+
+.text-block {
+    margin: 0 auto var(--global-vertical-space);
+	width: min(var(--max-width-content), 100%);
+}

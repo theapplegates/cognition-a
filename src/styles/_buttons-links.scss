@@ -1,0 +1,66 @@
+/* Focus States */
+:focus:not(:focus-visible) {
+	outline: 0;
+}
+:focus-visible {
+	outline: 5px auto var(--color-accent);
+}
+
+/* Default Link */
+a {
+    color: var(--color-primary-link);
+	font-variation-settings: "wght" 500;
+}
+
+/* Link Effect : Animating background */
+.link-effect,
+blockquote a,
+p a,
+ol:not([class]) a,
+ul:not([class]) a {
+    background: linear-gradient(var(--color-primary-link) 0 0) no-repeat 100% 100% / 100% calc(100%*var(--run,0) + .08em);
+    padding: 0 1px;
+    text-decoration: none;
+    @media (prefers-reduced-motion: no-preference) {
+        transition: background 300ms calc(var(--run,0) * 200ms) var(--global-easing), color 300ms calc(var(--run,0) * 200ms) var(--global-easing);
+    }
+}
+
+/* Skip Navigation */
+#skip-navigation {
+	align-items: center;
+	background-color: var(--color-accent);
+	color: var(--color-lightest);
+	display: flex;
+    font-size: 1rem;
+    font-variation-settings: "wght" 700;
+	justify-content: center;
+	left: 0;
+	overflow: hidden;
+	position: fixed;
+	height: var(--global-header-height);
+    padding: 0 var(--global-side-space);
+	right: 0;
+	text-align: center;
+	top: calc(-2 * var(--global-header-height));
+    transform: translateY(0);
+	transition: transform 350ms var(--global-easing);
+	width: 100%;
+	z-index: 6;
+	
+	&:active,
+	&:focus {
+		transform: translateY(calc(2 * var(--global-header-height)));
+	}
+}
+
+@media (hover: hover) and (pointer: fine) {
+    a:hover .link-effect,
+    blockquote a:hover,
+	p a:hover,
+    ol:not([class]) a:hover,
+    ul:not([class]) a:hover {
+        --run: 1;
+        color: white;
+	}
+}
